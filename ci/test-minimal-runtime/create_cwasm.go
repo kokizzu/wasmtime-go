@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	wasmtime "github.com/bytecodealliance/wasmtime-go/v46"
+	wasmtime "github.com/bytecodealliance/wasmtime-go/v47"
 )
 
 func main() {
@@ -16,6 +16,7 @@ func main() {
 	cfg := wasmtime.NewConfig()
 	cfg.SetGCSupport(false)
 	cfg.SetWasmThreads(false)
+	cfg.SetWasmExceptions(false)
 	cfg.SetWasmComponentModel(false)
 	cfg.SetConcurrencySupport(false)
 	engine := wasmtime.NewEngineWithConfig(cfg)
